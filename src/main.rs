@@ -188,6 +188,11 @@ impl eframe::App for AegisApp {
             .size_range(egui::Rangef::new(120.0, 600.0))
             .show(ui, |ui| {
                 ui.label("Left Panel");
+                for layer in &mut self.layers {
+                    ui.vertical(|ui| {
+                        ui.checkbox(&mut layer.visible, &layer.name);
+                    });
+                }
             });
 
         egui::Panel::right("right_panel")
