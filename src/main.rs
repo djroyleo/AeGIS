@@ -187,10 +187,23 @@ impl eframe::App for AegisApp {
             .default_size(500.0)
             .size_range(egui::Rangef::new(120.0, 600.0))
             .show(ui, |ui| {
-                ui.label("Left Panel");
+                ui.label("Contents");
                 for layer in &mut self.layers {
-                    ui.vertical(|ui| {
-                        ui.checkbox(&mut layer.visible, &layer.name);
+                    ui.horizontal(|ui| {
+                        ui.checkbox(&mut layer.visible, "");
+                        let name_response =
+                            ui.add(egui::Label::new(&layer.name).sense(egui::Sense::click()));
+                        name_response.context_menu(|ui| {
+                            if ui.button("Open attribute table").clicked() {
+                                ui.close();
+                            }
+                            if ui.button("Symbology").clicked() {
+                                ui.close();
+                            }
+                            if ui.button("Properties").clicked() {
+                                ui.close();
+                            }
+                        });
                     });
                 }
             });
@@ -199,7 +212,13 @@ impl eframe::App for AegisApp {
             .default_size(500.0)
             .size_range(egui::Rangef::new(120.0, 600.0))
             .show(ui, |ui| {
-                ui.label("Right Panel");
+                ui.label("Catalog");
+                if ui.button("Add folder connection").clicked() {
+                    ui.context_menu(|ui| {
+                        
+                    })
+                }
+                
             });
 
         egui::CentralPanel::default()
