@@ -258,6 +258,30 @@ impl AegisApp {
 
 impl eframe::App for AegisApp {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        egui::Panel::top("menu_bar")
+            .exact_size(24.0)
+            .show(ui, |ui| {
+                ui.horizontal_centered(|ui| {
+                    let _ = ui.button("File");
+                    let _ = ui.button("Edit");
+                    let _ = ui.button("View");
+                });
+            });
+
+        egui::Panel::left("left_panel")
+            .default_size(500.0)
+            .size_range(egui::Rangef::new(120.0, 600.0))
+            .show(ui, |ui| {
+                ui.label("Left Panel");
+            });
+
+        egui::Panel::right("right_panel")
+            .default_size(500.0)
+            .size_range(egui::Rangef::new(120.0, 600.0))
+            .show(ui, |ui| {
+                ui.label("Right Panel");
+            });
+
         egui::CentralPanel::default()
             .frame(egui::Frame::new().fill(egui::Color32::WHITE))
             .show(ui, |ui| {
