@@ -214,9 +214,7 @@ impl eframe::App for AegisApp {
             .show(ui, |ui| {
                 ui.label("Catalog");
                 if ui.button("Add folder connection").clicked() {
-                    ui.context_menu(|ui| {
-                        
-                    })
+                    ui.close();
                 }
                 
             });
