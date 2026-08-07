@@ -1,0 +1,20 @@
+[package]
+name = "aegis-app"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "aegis"
+path = "src/main.rs"
+
+[dependencies]
+aegis-core = { workspace = true }
+aegis-project = { workspace = true }
+aegis-raster = { workspace = true }
+aegis-render = { workspace = true }
+aegis-vector = { workspace = true }
+eframe = { workspace = true }
+geo-types = { workspace = true }
+
+[lints]
+workspace = true

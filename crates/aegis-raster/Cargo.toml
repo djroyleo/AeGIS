@@ -1,0 +1,11 @@
+[package]
+name = "aegis-raster"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aegis-core = { workspace = true }
+geo-types = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,12 @@
+[package]
+name = "aegis-io"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aegis-core = { workspace = true }
+aegis-raster = { workspace = true }
+aegis-vector = { workspace = true }
+
+[lints]
+workspace = true

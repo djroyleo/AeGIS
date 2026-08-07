@@ -1,0 +1,12 @@
+[package]
+name = "aegis-render"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aegis-core = { workspace = true }
+aegis-project = { workspace = true }
+geo-types = { workspace = true }
+
+[lints]
+workspace = true

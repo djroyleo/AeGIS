@@ -1,12 +1,27 @@
-[package]
-name = "AeGIS"
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[workspace.dependencies]
+# External
 eframe = "0.35.0"
+geo = "0.33"
+geo-types = "0.7"
 
-[lints.clippy]
+# Internal
+aegis-core = { path = "crates/aegis-core" }
+aegis-vector = { path = "crates/aegis-vector" }
+aegis-raster = { path = "crates/aegis-raster" }
+aegis-io = { path = "crates/aegis-io" }
+aegis-geoprocessing = { path = "crates/aegis-geoprocessing" }
+aegis-project = { path = "crates/aegis-project" }
+aegis-render = { path = "crates/aegis-render" }
+
+[workspace.lints.clippy]
 # UM, ACTUALLY
 pedantic = { level = "deny", priority = -1 }
 # DEVELOPING LINTS

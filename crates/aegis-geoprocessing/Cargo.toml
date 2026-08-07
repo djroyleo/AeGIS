@@ -1,0 +1,13 @@
+[package]
+name = "aegis-geoprocessing"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+aegis-core = { workspace = true }
+aegis-raster = { workspace = true }
+aegis-vector = { workspace = true }
+geo = { workspace = true }
+
+[lints]
+workspace = true
